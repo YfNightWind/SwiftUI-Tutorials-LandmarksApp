@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import Combine
 
+final class ModelData: ObservableObject {
+    @Published var landmarks: [Landmark] = load("landmarkData.json")
+}
 
 var landmarks : [Landmark] = load("landmarkData.json")
 // 这里不可以省略<T: Decodable>，不可以设置函数返回类型为Decodable，不然会在return的时候报下面这个错误👇
